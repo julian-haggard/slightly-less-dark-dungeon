@@ -275,18 +275,22 @@ function create ()
 
     help.setScrollFactor(0);
 
-    var gui = new dat.GUI();
+    //var gui = new dat.GUI();
 
-    gui.addFolder('Camera');
-    gui.add(cam, 'scrollX').listen();
-    gui.add(cam, 'scrollY').listen();
-    gui.add(cam, 'zoom', 0.1, 4).step(0.1);
-    gui.add(cam, 'rotation').step(0.01);
-    gui.add(layer, 'skipCull').listen();
-    gui.add(layer, 'cullPaddingX').step(1);
-    gui.add(layer, 'cullPaddingY').step(1);
-    gui.add(layer, 'tilesDrawn').listen();
-    gui.add(layer, 'tilesTotal').listen();
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels );
+    //make the camera follow the player
+    this.cameras.main.startFollow(player);
+
+    //gui.addFolder('Camera');
+    //gui.add(cam, 'scrollX').listen();
+    //gui.add(cam, 'scrollY').listen();
+    //gui.add(cam, 'zoom', 0.1, 4).step(0.1);
+    //gui.add(cam, 'rotation').step(0.01);
+    //gui.add(layer, 'skipCull').listen();
+    //gui.add(layer, 'cullPaddingX').step(1);
+    //gui.add(layer, 'cullPaddingY').step(1);
+    //gui.add(layer, 'tilesDrawn').listen();
+    //gui.add(layer, 'tilesTotal').listen();
 }
 
 function update (time, delta)
