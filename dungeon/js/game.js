@@ -137,20 +137,17 @@ var TILES = {
 
 function preload ()
 {
-    // Credits! Michele "Buch" Bucelli (tilset artist) & Abram Connelly (tileset sponser)
-    // https://opengameart.org/content/top-down-dungeon-tileset
+  
     this.load.image('tiles', 'img/buch-dungeon-tileset-extruded.png');
     // Load in images and sprites
     this.load.spritesheet('player_handgun', 'assets/sprites/player_handgun.png',
         { frameWidth: 66, frameHeight: 60 }
-    ); // Made by tokkatrain: https://tokkatrain.itch.io/top-down-basic-set
+    ); 
     this.load.image('bullet', 'assets/sprites/bullets/bullet6.png');
 }
 
 function create ()
 {
-    // Note: Dungeon is not a Phaser element - it's from the custom script embedded at the bottom :)
-    // It generates a simple set of connected rectangular rooms that then we can turn into a tilemap
 
     //  2,500 tile test
     // dungeon = new Dungeon({
