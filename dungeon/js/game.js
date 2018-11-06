@@ -162,6 +162,8 @@ function create ()
     //  40,000 tile test
     playerBullets = this.physics.add.group({ classType: Bullet, runChildUpdate: true });
     enemyBullets = this.physics.add.group({ classType: Bullet, runChildUpdate: true });
+    
+    gameObject.physics.add.collider(player, bullet, playerHitCallback);
 
     // Add background player, enemy, reticle, healthpoint sprites
     player = this.physics.add.sprite(800, 600, 'player_handgun');
@@ -477,7 +479,7 @@ function enemyFire(enemy, player, time, gameObject)
         {
             bullet.fire(enemy, player);
             // Add collider between bullet and player
-            gameObject.physics.add.collider(player, bullet, playerHitCallback);
+            
         }
     }
 }
