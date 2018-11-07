@@ -478,8 +478,6 @@ function enemyFire(enemy, player, time, gameObject)
         if (bullet)
         {
             bullet.fire(enemy, player);
-            // Add collider between bullet and player
-            
         }
     }
 }
